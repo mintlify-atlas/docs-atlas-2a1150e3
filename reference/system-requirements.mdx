@@ -1,0 +1,54 @@
+---
+title: "System requirements for TransactApp"
+description: "Minimum hardware, software, and connectivity requirements to install and run TransactApp on Windows, including OS version, .NET runtime, and browser guidance."
+---
+
+TransactApp is a Windows desktop application built on .NET 10.0. Before installing, confirm that your system meets the requirements below. The ClickOnce installer handles most dependencies automatically, so setup is straightforward on any supported version of Windows.
+
+## Requirements
+
+| Requirement | Minimum | Notes |
+|---|---|---|
+| **Operating system** | Windows XP SP0 (5.1.2600) | Windows 10 or later recommended for best experience |
+| **Architecture** | x86 or x64 | ARM64 Windows is also supported |
+| **.NET runtime** | Microsoft.WindowsDesktop.App 10.0 and Microsoft.NETCore.App 10.0 | Installed automatically if missing (see note below) |
+| **Disk space** | ~10 MB | App DLL ~3 MB; additional space for SQLite native libraries and your data file |
+| **Internet connection** | Required for installation and updates | Fully offline after first install |
+| **Browser** | Microsoft Edge recommended | Chrome and Firefox users should use `setup.exe` instead of clicking the `.application` link directly |
+
+<Note>
+  If .NET 10.0 is not already installed on your machine, the ClickOnce installer detects this and downloads the required runtime automatically before completing the installation. You do not need to install .NET separately.
+</Note>
+
+## Operating system details
+
+TransactApp targets Windows XP SP0 or later at the manifest level, but running on Windows 10 or Windows 11 is strongly recommended. Older versions of Windows may lack security updates and driver support that affect general system stability.
+
+## Architecture support
+
+The application is compiled as MSIL (Any CPU), meaning a single installer works on both 32-bit and 64-bit Windows. The bundled SQLite native libraries cover the following runtime identifiers:
+
+- `win-x64`
+- `win-x86`
+- `win-arm64`
+
+No additional configuration is needed — the correct native library is selected automatically at runtime.
+
+## Browser and ClickOnce
+
+ClickOnce installation works natively in Microsoft Edge. If you use Chrome or Firefox, those browsers will download the `.application` file rather than launching the installer. In that case, use the `setup.exe` entry point provided on the download page instead.
+
+<Tip>
+  If you encounter a browser warning when downloading `setup.exe`, click **Keep** or **Allow** — the file is signed by the publisher (Mayk) and is safe to run.
+</Tip>
+
+## Related pages
+
+<CardGroup cols={2}>
+  <Card title="Installation" icon="download" href="/installation">
+    Step-by-step instructions for installing TransactApp via ClickOnce.
+  </Card>
+  <Card title="Updates" icon="rotate" href="/guides/updates">
+    How automatic updates work and what to do if an update fails.
+  </Card>
+</CardGroup>

@@ -1,0 +1,99 @@
+---
+title: "Install TransactApp on Windows"
+description: "Two ways to install TransactApp on Windows: ClickOnce via Microsoft Edge for automatic updates, or setup.exe for Chrome and Firefox users."
+---
+
+TransactApp is distributed via ClickOnce, a Microsoft deployment technology that handles installation and automatic updates. There are two installer options depending on which browser you use. Both methods install the same application; the difference is only in how the installer is launched.
+
+<Info>
+  TransactApp requires Windows XP SP0 or later. The .NET 10.0 desktop runtime is installed automatically if it is not already present on your machine.
+</Info>
+
+## Choosing an installation method
+
+| Method | Best for | Auto-updates |
+|---|---|---|
+| `TransactApp.application` (ClickOnce) | Microsoft Edge | Yes, checked on every launch |
+| `setup.exe` | Chrome, Firefox, or any browser | Yes, checked on every launch |
+
+Both methods result in an identical installation with automatic update support. The standalone `setup.exe` exists because Chrome and Firefox do not natively handle `.application` files — they download them rather than launching the ClickOnce installer.
+
+<Tabs>
+  <Tab title="ClickOnce (Edge)">
+    Use this method if you are opening the install link in Microsoft Edge.
+
+    <Steps>
+      <Step title="Open the install link in Edge">
+        Navigate to the deployment URL in Microsoft Edge:
+
+        ```
+        https://whosmayk.github.io/TransactApp-Deploy/TransactApp.application
+        ```
+
+        Edge recognizes `.application` files and prompts you to install rather than download.
+      </Step>
+      <Step title="Accept the security prompt">
+        A dialog will appear asking you to confirm the installation. The publisher is listed as **Mayk**. Click **Install** to proceed.
+
+        <Warning>
+          If Windows SmartScreen shows a warning, click **More info** and then **Run anyway**. The application is safe; SmartScreen flags ClickOnce apps from publishers that have not yet established reputation history.
+        </Warning>
+      </Step>
+      <Step title="Wait for the installation to complete">
+        ClickOnce downloads the application files and installs TransactApp. A progress dialog is shown during download. The duration depends on your internet connection speed.
+      </Step>
+      <Step title="Launch the app">
+        Once installation finishes, TransactApp opens automatically. A shortcut is also added to your Start menu and desktop for future launches.
+      </Step>
+    </Steps>
+  </Tab>
+  <Tab title="setup.exe (Chrome / Firefox)">
+    Use this method if you are using Chrome, Firefox, or any browser other than Edge.
+
+    <Steps>
+      <Step title="Download setup.exe">
+        Go to the TransactApp deployment page and download the `setup.exe` file:
+
+        ```
+        https://whosmayk.github.io/TransactApp-Deploy/
+        ```
+
+        Click the **setup.exe** link. Your browser will download it to your Downloads folder.
+      </Step>
+      <Step title="Run setup.exe">
+        Open the downloaded `setup.exe` file. If Windows shows a User Account Control (UAC) prompt, click **Yes** to allow the installer to run.
+
+        <Note>
+          Chrome may warn that `setup.exe` is not commonly downloaded. Click **Keep** or **Keep anyway** to proceed — this warning appears for any executable that has not accumulated many downloads from Chrome's perspective.
+        </Note>
+      </Step>
+      <Step title="Accept the security prompt">
+        The ClickOnce installer will open and display a dialog listing the publisher as **Mayk** and the application as **TransactApp**. Click **Install** to continue.
+
+        <Warning>
+          If Windows SmartScreen shows a warning, click **More info** and then **Run anyway**.
+        </Warning>
+      </Step>
+      <Step title="Wait for the installation to complete">
+        The installer downloads and installs the application files. A progress indicator is shown during this process.
+      </Step>
+      <Step title="Launch the app">
+        TransactApp opens automatically when installation is complete. A shortcut is added to your Start menu and desktop.
+      </Step>
+    </Steps>
+  </Tab>
+</Tabs>
+
+## After installation
+
+Once TransactApp is installed, you do not need to manage updates manually. Every time you launch the app, ClickOnce checks for a newer version before the main window opens. If an update is available, it downloads and applies automatically.
+
+<Tip>
+  You must have version **1.0.0.3 or later** installed to receive automatic updates. If you have an older version, uninstall it and use one of the methods above to install a fresh copy.
+</Tip>
+
+The application stores its data in a local SQLite database on your machine. No data is sent to any server during normal use. See [Data storage](/reference/data-storage) for the exact file location.
+
+## Uninstalling
+
+To remove TransactApp, open **Settings → Apps** (Windows 10/11) or **Control Panel → Programs and Features** (Windows 7/8), find **TransactApp** in the list, and click **Uninstall**. Your data file is not deleted automatically — see [Data storage](/reference/data-storage) if you want to remove it manually.

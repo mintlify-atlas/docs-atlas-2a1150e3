@@ -1,0 +1,102 @@
+---
+title: "Keeping TransactApp up to date automatically"
+description: "Understand how TransactApp's ClickOnce update system works, what happens when a new version is available, and how to recover if an automatic update fails."
+---
+
+TransactApp uses ClickOnce deployment to deliver updates automatically. Each time you launch the app, it checks for a newer version before opening the main interface. If an update is available, it downloads and applies it silently — so you are always running the latest release without any manual download or reinstall steps.
+
+## How automatic updates work
+
+TransactApp is configured to check for updates at the `beforeApplicationStartup` stage, meaning the update check happens before the application UI appears. This approach ensures that by the time you start using the app, it is already running the most current version.
+
+The update check contacts the deployment URL hosted on GitHub Pages:
+
+```text
+https://whosmayk.github.io/TransactApp-Deploy/TransactApp.application
+```
+
+<Steps>
+  <Step title="Launch TransactApp">
+    Double-click the TransactApp shortcut or entry in the Start menu. The ClickOnce runtime begins the startup sequence.
+  </Step>
+  <Step title="Update check runs automatically">
+    Before the app opens, ClickOnce contacts the deployment URL and compares the installed version against the latest published version. This step requires an internet connection.
+  </Step>
+  <Step title="Update downloads and applies (if available)">
+    If a newer version is found, ClickOnce downloads the update package and applies it. Depending on the update policy, this may happen automatically or prompt you to confirm before proceeding.
+  </Step>
+  <Step title="TransactApp launches with the latest version">
+    Once the update is applied (or if no update was found), TransactApp opens normally. No restart or additional action is required.
+  </Step>
+</Steps>
+
+<Tip>
+  TransactApp requires an active internet connection to check for and download updates. If you launch the app without internet access, the update check will be skipped and the app will open using the currently installed version.
+</Tip>
+
+## Minimum required version
+
+Versions older than **1.0.0.3** cannot skip the update and will be required to update before the app will run. If you are on a version earlier than 1.0.0.3, the ClickOnce runtime will prompt you to update and will not allow you to proceed with the outdated version.
+
+If you are on version 1.0.0.3 or later, updates are applied automatically without blocking access to the app.
+
+## Version history
+
+The following versions have been released after the initial 1.0.0.3 baseline:
+
+| Version | Notes |
+|---------|-------|
+| 1.0.0.4 | First update release after baseline |
+| 1.0.0.5 | Incremental improvements |
+| 1.0.0.6 | Incremental improvements |
+| 1.0.0.7 | Current release |
+
+<Note>
+  Detailed release notes for each version are available on the [changelog](/reference/changelog) page.
+</Note>
+
+## What to do if an automatic update fails
+
+Occasionally, the automatic update process may fail — for example, if the download is interrupted, the deployment server is temporarily unavailable, or a network policy blocks the connection.
+
+<Steps>
+  <Step title="Check your internet connection">
+    Confirm that your PC has a working internet connection. Open a browser and verify that you can load a webpage before attempting anything else.
+  </Step>
+  <Step title="Relaunch TransactApp">
+    Close and reopen TransactApp. ClickOnce will retry the update check on the next launch. Many transient failures resolve on retry.
+  </Step>
+  <Step title="Reinstall from the deployment URL">
+    If retrying does not resolve the issue, reinstall TransactApp by navigating to the deployment URL in your browser and running the installer:
+
+    ```text
+    https://whosmayk.github.io/TransactApp-Deploy/TransactApp.application
+    ```
+
+    Opening this link in Microsoft Edge will trigger the ClickOnce installer directly. In Chrome or Firefox, download the `.application` file and open it manually.
+  </Step>
+  <Step title="Verify your data is intact">
+    After reinstalling, open TransactApp and confirm that your transactions and cash inventory records are present. ClickOnce reinstalls do not delete your local database file — your data is stored separately and is preserved.
+  </Step>
+</Steps>
+
+<Note>
+  If you reinstall TransactApp, you do not need to restore a backup. Your local SQLite database file is not removed during a ClickOnce reinstall. See the [data backup guide](/guides/data-backup) for details on where your data is stored.
+</Note>
+
+## Related pages
+
+<CardGroup cols={2}>
+  <Card title="Installation" icon="download" href="/installation">
+    Install TransactApp for the first time using the ClickOnce installer or standalone setup.
+  </Card>
+  <Card title="Changelog" icon="list-check" href="/reference/changelog">
+    Review the full version history and release notes for all TransactApp versions.
+  </Card>
+  <Card title="Data backup" icon="floppy-disk" href="/guides/data-backup">
+    Learn how to back up and restore your local database file to protect your financial records.
+  </Card>
+  <Card title="System requirements" icon="desktop" href="/reference/system-requirements">
+    Hardware and software requirements needed to run TransactApp on Windows.
+  </Card>
+</CardGroup>

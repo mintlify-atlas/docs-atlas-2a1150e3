@@ -1,0 +1,65 @@
+{
+  "projectType": "saas",
+  "projectName": "TransactApp",
+  "projectDescription": "A Windows desktop application for personal finance management and cash inventory control, distributed via ClickOnce deployment.",
+  "theme": "almond",
+  "primaryColor": "#0078d4",
+  "lightColor": "#4dabf7",
+  "darkColor": "#005a9e",
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Documentation",
+        "groups": [
+          {
+            "group": "Get Started",
+            "pages": [
+              "introduction",
+              "installation",
+              "quickstart"
+            ]
+          },
+          {
+            "group": "Core Features",
+            "pages": [
+              "features/transactions",
+              "features/cash-inventory",
+              "features/reports"
+            ]
+          },
+          {
+            "group": "Guides",
+            "pages": [
+              "guides/managing-finances",
+              "guides/data-backup",
+              "guides/updates"
+            ]
+          },
+          {
+            "group": "Reference",
+            "pages": [
+              "reference/system-requirements",
+              "reference/data-storage",
+              "reference/changelog"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "keyFeatures": [
+    "Personal finance tracking with income and expense recording",
+    "Cash inventory management and control",
+    "SQLite local database for offline data storage",
+    "ClickOnce auto-update deployment via GitHub Pages",
+    "Windows desktop application with dark mode interface",
+    "Multiple version history (v1.0.0.4 through v1.0.0.7)"
+  ],
+  "publicApiSurface": [
+    "ClickOnce installer: TransactApp.application",
+    "Standalone installer: setup.exe",
+    "Deployment URL: https://whosmayk.github.io/TransactApp-Deploy/TransactApp.application",
+    "SQLite local database (System.Data.SQLite)",
+    "Newtonsoft.Json for data serialization"
+  ]
+}

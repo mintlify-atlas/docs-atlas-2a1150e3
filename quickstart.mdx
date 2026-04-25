@@ -1,81 +1,89 @@
 ---
-title: "Quickstart"
-description: "Start building awesome documentation in minutes"
-icon: 'rocket'
+title: "Get started with TransactApp"
+description: "Launch TransactApp for the first time, record your first transaction, review your cash inventory, and generate your first report in minutes."
 ---
 
-## Get started in three steps
+After installing TransactApp, you are ready to start managing your finances. This guide walks you through the essential first steps: launching the app, recording an income or expense entry, checking your cash inventory, and viewing a report. The whole flow takes about five minutes.
 
-Get your documentation site running locally and make your first customization.
+<Note>
+  If you have not installed TransactApp yet, see the [installation guide](/installation) before continuing.
+</Note>
 
-### Step 1: Set up your local environment
+<Steps>
+  <Step title="Launch TransactApp">
+    Open TransactApp from the desktop shortcut or the Start menu. When the app starts, ClickOnce first checks for updates. If a newer version is available, it downloads and applies the update before the main window appears — this is expected behavior and only takes a moment.
 
-<AccordionGroup>
-  <Accordion icon="copy" title="Clone your docs locally">
-    During the onboarding process, you created a GitHub repository with your docs content if you didn't already have one. You can find a link to this repository in your [dashboard](https://dashboard.mintlify.com).
-    
-    To clone the repository locally so that you can make and preview changes to your docs, follow the [Cloning a repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository) guide in the GitHub docs.
-  </Accordion>
-  <Accordion icon="rectangle-terminal" title="Start the preview server">
-    1. Install the Mintlify CLI: `npm i -g mint`
-    2. Navigate to your docs directory and run: `mint dev`
-    3. Open `http://localhost:3000` to see your docs live!
-    
-    <Tip>Your preview updates automatically as you edit files.</Tip>
-  </Accordion>
-</AccordionGroup>
+    The main window opens with the transaction list in the center, a navigation panel on the left, and a summary area at the top showing your current balance.
 
-### Step 2: Deploy your changes
+    <Tip>
+      On first launch, the transaction list is empty and your balance shows zero. This is normal — TransactApp starts with a clean slate so you can enter your actual opening balance.
+    </Tip>
+  </Step>
+  <Step title="Record your first transaction">
+    To add an income or expense entry:
 
-<AccordionGroup>
-  <Accordion icon="github" title="Install our GitHub app">
-    Install the Mintlify GitHub app from your [dashboard](https://dashboard.mintlify.com/settings/organization/github-app).
-    
-    Our GitHub app automatically deploys your changes to your docs site, so you don't need to manage deployments yourself.
-</Accordion>
-<Accordion icon="palette" title="Update your site name and colors">
-    For a first change, let's update the name and colors of your docs site.
+    1. Click the **New transaction** button in the toolbar.
+    2. Select the transaction type: **Income** or **Expense**.
+    3. Enter the amount.
+    4. Choose or type a category (for example, "Salary" for income or "Groceries" for an expense).
+    5. Set the date — it defaults to today.
+    6. Optionally, add a note to describe the entry.
+    7. Click **Save**.
 
-    1. Open `docs.json` in your editor.
-    2. Change the `"name"` field to your project name.
-    3. Update the `"colors"` to match your brand.
-    4. Save and see your changes instantly at `http://localhost:3000`.
+    The transaction appears immediately in the list, and the balance summary at the top updates to reflect the new entry.
 
-    <Tip>Try changing the primary color to see an immediate difference!</Tip>
-  </Accordion>
-</AccordionGroup>
+    <Tip>
+      Start by recording your current account balance as an income entry with the category "Opening balance." This gives you an accurate starting point for tracking future transactions.
+    </Tip>
+  </Step>
+  <Step title="Check your cash inventory">
+    If you handle physical cash and want to track how much you have on hand by denomination, navigate to the **Cash inventory** section from the left panel.
 
-### Step 3: Go live
+    Here you can:
 
-<Accordion icon="rocket" title="Publish your docs">
-  1. Commit and push your changes.
-  2. Your docs will update and be live in moments!
-</Accordion>
+    - Enter the quantity of each bill or coin denomination you currently have.
+    - See the calculated total for each denomination and an overall cash total.
+    - Update the counts as you spend or receive cash.
+
+    <Note>
+      The cash inventory is independent from your transaction log. It represents a snapshot of the physical cash you have at any given moment. Update it whenever you count your wallet or cash drawer.
+    </Note>
+  </Step>
+  <Step title="View your first report">
+    Navigate to the **Reports** section from the left panel. Reports summarize your transaction data so you can see patterns in your income and spending.
+
+    On your first visit:
+
+    1. Select a date range (for example, the current month).
+    2. Choose a report type — a summary by category or a full transaction list.
+    3. Review the breakdown of income versus expenses for the selected period.
+
+    <Tip>
+      Even with just one or two transactions entered, running a report helps you confirm that your data was recorded correctly before you add a large amount of historical data.
+    </Tip>
+  </Step>
+  <Step title="Keep your data safe">
+    TransactApp stores all data in a local SQLite database file on your machine. Since there is no cloud backup, it is a good habit to periodically copy the database file to an external drive or cloud storage folder.
+
+    See [Data backup](/guides/data-backup) for the exact file location and recommended backup steps.
+  </Step>
+</Steps>
 
 ## Next steps
 
-Now that you have your docs running, explore these key features:
+Now that you have completed the basic workflow, explore the full feature set:
 
 <CardGroup cols={2}>
-
-<Card title="Write Content" icon="pen-to-square" href="/essentials/markdown">
-  Learn MDX syntax and start writing your documentation.
-</Card>
-
-<Card title="Customize style" icon="palette" href="/essentials/settings">
-  Make your docs match your brand perfectly.
-</Card>
-
-<Card title="Add code examples" icon="square-code" href="/essentials/code">
-  Include syntax-highlighted code blocks.
-</Card>
-
-<Card title="API documentation" icon="code" href="/api-reference/introduction">
-  Auto-generate API docs from OpenAPI specs.
-</Card>
-
+  <Card title="Transactions" icon="arrow-right-arrow-left" href="/features/transactions">
+    Learn how to edit, delete, filter, and categorize your transaction entries.
+  </Card>
+  <Card title="Cash inventory" icon="coins" href="/features/cash-inventory">
+    Track physical cash by denomination with running totals and history.
+  </Card>
+  <Card title="Reports" icon="chart-bar" href="/features/reports">
+    Generate detailed income and expense summaries over custom date ranges.
+  </Card>
+  <Card title="Managing finances" icon="wallet" href="/guides/managing-finances">
+    Best practices for organizing categories and maintaining accurate records.
+  </Card>
 </CardGroup>
-
-<Note>
-  **Need help?** See our [full documentation](https://mintlify.com/docs) or join our [community](https://mintlify.com/community).
-</Note>

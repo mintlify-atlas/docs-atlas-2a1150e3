@@ -1,0 +1,71 @@
+---
+title: "Viewing financial reports and summaries"
+description: "Explore how TransactApp's reports section summarizes your income, expenses, and cash balance to help you understand your financial position over time."
+---
+
+TransactApp's reports section brings together your transaction history and cash inventory data into summaries that make it easy to understand your financial position. Instead of scrolling through individual entries, you can see totals, breakdowns, and balances at a glance — making reports the best place to review your finances and plan ahead.
+
+## Accessing reports
+
+Open TransactApp and navigate to the **Reports** section from the main navigation. The reports view loads automatically with your current data — there is nothing to configure before your first use, and all figures are drawn from your locally stored SQLite database.
+
+## Report types
+
+<AccordionGroup>
+  <Accordion title="Income and expense summary" defaultOpen={true}>
+    This report shows your total income and total expenses for a given period. At a glance, you can see whether you are spending more than you earn, and by how much. The net balance (income minus expenses) is displayed prominently so you can assess your overall financial direction.
+  </Accordion>
+  <Accordion title="Balance overview">
+    The balance overview combines your transaction ledger balance with your cash inventory balance. This gives you a side-by-side view of your calculated balance (based on all recorded transactions) and your recorded physical cash on hand. Use this to spot any gap between what your records say and what you actually hold.
+  </Accordion>
+  <Accordion title="Category breakdown">
+    If you use consistent descriptions or category labels when recording transactions, the category breakdown groups your expenses and income by those labels. This makes it easy to see where most of your money is going — for example, how much you spend on groceries versus utilities versus transport in a given period.
+  </Accordion>
+  <Accordion title="Period totals">
+    Period totals let you view income and expenses filtered to a specific date range. Use this to review a particular month, quarter, or any custom range to compare spending across different periods of time.
+  </Accordion>
+</AccordionGroup>
+
+## Understanding the data
+
+<CardGroup cols={2}>
+  <Card title="Transaction balance" icon="scale-balanced">
+    Calculated from the sum of all income entries minus all expense entries in your ledger. This reflects your financial history as recorded, regardless of payment method.
+  </Card>
+  <Card title="Cash inventory balance" icon="coins">
+    The physical cash on hand that you have manually recorded in the cash inventory section. This figure is only as current as your last update.
+  </Card>
+  <Card title="Category totals" icon="chart-pie">
+    Totals grouped by the description or category you assigned when recording each transaction. Consistent naming makes these groupings more meaningful.
+  </Card>
+  <Card title="Net balance" icon="arrow-trend-up">
+    The difference between total income and total expenses for the selected period. A positive net balance means you earned more than you spent; a negative balance means the reverse.
+  </Card>
+</CardGroup>
+
+## Filtering by date range
+
+Use the date range controls in the reports view to limit the data to a specific period. For example:
+
+- Set the start and end date to a single calendar month to review that month's spending.
+- Extend the range to a full year for an annual overview.
+- Use a short range (such as the past two weeks) to review recent activity.
+
+Narrowing the date range does not delete any data — it only changes what the report displays. Your full history is always available by clearing or expanding the filter.
+
+## Using reports to review your financial health
+
+Reports are most useful when reviewed regularly, not just when something feels wrong. A weekly or monthly review helps you:
+
+- Confirm that your spending aligns with your intentions.
+- Catch forgotten or duplicate transactions before they compound.
+- Understand which categories consume the most of your budget.
+- Compare your cash on hand against your expected balance.
+
+<Tip>
+  Set a regular time — for example, the first day of each month — to open the reports view and review the previous period. This habit takes only a few minutes and gives you a consistent check on your financial health. See [managing your finances](/guides/managing-finances) for more budgeting guidance.
+</Tip>
+
+<Note>
+  Reports in TransactApp reflect only the data you have entered. If you have not recorded all transactions, or if your cash inventory balance has not been updated recently, the summaries will not reflect your actual financial position. Accurate reports depend on accurate input. See [recording transactions](/features/transactions) and [cash inventory](/features/cash-inventory) for guidance on keeping your data current.
+</Note>

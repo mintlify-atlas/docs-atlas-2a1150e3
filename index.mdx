@@ -1,133 +1,59 @@
 ---
-title: "Introduction"
-description: "Welcome to the new home for your documentation"
-icon: 'star'
+title: "TransactApp: Personal Finance & Cash Management"
+description: "TransactApp is a Windows desktop application for personal finance tracking and cash inventory control. All data stored locally — no cloud account required."
 ---
 
-## Setting up
+TransactApp is a Windows desktop application that helps you track income, expenses, and cash inventory — all stored locally on your device using SQLite, with no internet connection required. Whether you're managing day-to-day spending or monitoring your cash on hand, TransactApp gives you a clear picture of your personal finances.
 
-Get your documentation site up and running in minutes.
-
-<Card
-  title="Start here"
-  icon="rocket"
-  href="/quickstart"
-  horizontal
->
-  Follow our three step quickstart guide.
-</Card>
-
-## Make it yours
-
-Design a docs site that looks great and empowers your users.
-
-<Columns cols={2}>
-  <Card
-    title="Edit locally"
-    icon="pen-to-square"
-    href="/development"
-  >
-    Edit your docs locally and preview them in real time.
+<CardGroup cols={2}>
+  <Card title="Installation" icon="download" href="/installation">
+    Install TransactApp on your Windows PC in minutes using the ClickOnce installer or standalone setup.
   </Card>
-  <Card
-    title="Customize your site"
-    icon="palette"
-    href="/essentials/settings"
-  >
-    Customize the design and colors of your site to match your brand.
+  <Card title="Quickstart" icon="rocket" href="/quickstart">
+    Get up and running fast — record your first transaction and start tracking your finances right away.
   </Card>
-    <Card
-    title="Set up navigation"
-    icon="map"
-    href="/essentials/navigation"
-  >
-    Organize your docs to help users find what they need and succeed with your product.
+  <Card title="Transactions" icon="arrow-right-arrow-left" href="/features/transactions">
+    Learn how to record income and expenses, categorize entries, and keep your financial history accurate.
   </Card>
-  <Card
-    title="API documentation"
-    icon="terminal"
-    href="/api-reference/introduction"
-  >
-    Auto-generate API documentation from OpenAPI specifications.
+  <Card title="Cash Inventory" icon="money-bill-wave" href="/features/cash-inventory">
+    Track the physical cash you have on hand and monitor changes over time with the cash inventory tool.
   </Card>
-</Columns>
+</CardGroup>
 
-## Create beautiful pages
+## Get started in minutes
 
-Everything you need to create world-class documentation.
+<Steps>
+  <Step title="Download TransactApp">
+    Visit the [installation page](/installation) and choose between the ClickOnce installer (recommended for Microsoft Edge) or the standalone `setup.exe` (recommended for Chrome and Firefox).
+  </Step>
+  <Step title="Install and launch">
+    Run the installer and follow the on-screen prompts. TransactApp will create a desktop shortcut and launch automatically after installation.
+  </Step>
+  <Step title="Record your first transaction">
+    Open TransactApp and add your first income or expense entry. Set the amount, category, and date to start building your financial history.
+  </Step>
+  <Step title="Review your finances">
+    Use the reports view to see summaries of your spending and income, and check your cash inventory balance at any time.
+  </Step>
+</Steps>
 
-<Columns cols={2}>
-  <Card
-    title="Write with MDX"
-    icon="pen-fancy"
-    href="/essentials/markdown"
-  >
-    Use MDX to style your docs pages.
-  </Card>
-  <Card
-    title="Code samples"
-    icon="code"
-    href="/essentials/code"
-  >
-    Add sample code to demonstrate how to use your product.
-  </Card>
-  <Card
-    title="Images"
-    icon="image"
-    href="/essentials/images"
-  >
-    Display images and other media.
-  </Card>
-  <Card
-    title="Reusable snippets"
-    icon="recycle"
-    href="/essentials/reusable-snippets"
-  >
-    Write once and reuse across your docs.
-  </Card>
-</Columns>
+## Why TransactApp?
 
-## Make your content agent ready
-
-Make your docs work for humans and AI agents alike.
-
-<Columns cols={2}>
-  <Card
-    title="Prompt component"
-    icon="robot"
-    href="/agent-ready/prompt"
-  >
-    Embed shareable AI prompts readers can copy or open in Cursor.
+<CardGroup cols={2}>
+  <Card title="Offline and private" icon="shield-halved">
+    All data is stored locally in a SQLite database on your computer. No cloud sync, no accounts required — your financial data stays on your device.
   </Card>
-  <Card
-    title="Visibility"
-    icon="eye"
-    href="/agent-ready/visibility"
-  >
-    Show different content to humans and agents reading your docs.
+  <Card title="Cash inventory tracking" icon="coins">
+    Beyond basic expense tracking, TransactApp lets you monitor physical cash on hand — useful for budgeting with cash-based spending.
   </Card>
-  <Card
-    title="Contextual menu"
-    icon="bolt"
-    href="/agent-ready/contextual"
-  >
-    Give readers one-click access to Claude, ChatGPT, Cursor, and more.
+  <Card title="Automatic updates" icon="rotate">
+    TransactApp uses ClickOnce deployment for seamless automatic updates. When a new version is available, the app updates itself before launching.
   </Card>
-  <Card
-    title="AI coding tools"
-    icon="wand-magic-sparkles"
-    href="/ai-tools/claude-code"
-  >
-    Set up Claude Code, Cursor, or Windsurf with Mintlify's skill.
+  <Card title="Lightweight and fast" icon="bolt">
+    Built on .NET with a small footprint, TransactApp starts quickly and runs efficiently without consuming significant system resources.
   </Card>
-</Columns>
+</CardGroup>
 
-## Need inspiration?
-
-<Card
-  title="See complete examples"
-  icon="stars"
-  href="https://mintlify.com/customers"
->
-  Browse our showcase of exceptional documentation sites.
-</Card>
+<Note>
+  TransactApp is a Windows desktop application and requires Windows with .NET runtime. See [system requirements](/reference/system-requirements) for full details.
+</Note>

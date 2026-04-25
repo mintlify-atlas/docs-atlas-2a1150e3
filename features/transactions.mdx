@@ -1,0 +1,76 @@
+---
+title: "Recording and managing your transactions"
+description: "Learn how to add, edit, and delete income and expense entries in TransactApp, and how your transaction history is organized and stored locally."
+---
+
+Transactions are the foundation of TransactApp. Every time you receive money or spend it, you record a transaction — an entry that captures the type, amount, date, and a description or category. All transactions are saved automatically to a local SQLite database on your device, so your data is always available offline and stays private.
+
+## Transaction fields
+
+Each transaction you record contains the following information:
+
+| Field | Description |
+|---|---|
+| **Type** | Whether the entry is income (money received) or an expense (money spent) |
+| **Amount** | The monetary value of the transaction, entered as a number |
+| **Date** | The date the transaction occurred |
+| **Description / Category** | A label or short note to identify the transaction (e.g., "Salary", "Groceries", "Rent") |
+
+## Adding a transaction
+
+<Steps>
+  <Step title="Open the transactions view">
+    Launch TransactApp. The transactions list is the main view when you open the app. Click **Add** or the equivalent button in the toolbar to start a new entry.
+  </Step>
+  <Step title="Select the transaction type">
+    Choose **Income** if you received money, or **Expense** if you spent money. This determines how the entry affects your overall balance.
+  </Step>
+  <Step title="Enter the amount">
+    Type the monetary value for this transaction. Enter numbers only — do not include currency symbols.
+  </Step>
+  <Step title="Set the date">
+    Select the date the transaction took place. This defaults to today's date but can be changed to record past transactions.
+  </Step>
+  <Step title="Add a description or category">
+    Enter a short label to identify the transaction. Use consistent names (such as "Groceries" or "Utilities") to make your history easier to read and review later.
+  </Step>
+  <Step title="Save the transaction">
+    Confirm the entry. TransactApp saves it immediately to your local SQLite database — no manual save or internet connection is required.
+  </Step>
+</Steps>
+
+## Editing a transaction
+
+To correct a mistake or update an entry:
+
+1. Locate the transaction in the list.
+2. Select it to highlight the row.
+3. Click **Edit** (or double-click the entry, depending on your version).
+4. Update the fields you want to change.
+5. Confirm the changes. The record is updated in the local database immediately.
+
+## Deleting a transaction
+
+To remove a transaction from your history:
+
+1. Select the transaction in the list.
+2. Click **Delete**.
+3. Confirm the deletion when prompted.
+
+<Warning>
+  Deleted transactions cannot be recovered. There is no undo for this action, so double-check before confirming.
+</Warning>
+
+## Browsing and filtering your transaction list
+
+The transaction list displays all your recorded entries in reverse chronological order by default, with the most recent entries at the top. You can scroll through the full history to review past entries.
+
+Use the available filter or search controls to narrow the list by date range, transaction type (income or expense), or description. This makes it easier to locate a specific entry or review spending within a particular period.
+
+<Tip>
+  Use consistent, descriptive category names from the start. A clear naming convention (for example, always writing "Electricity" rather than varying between "Electric", "Power bill", or "Utilities") makes it much easier to spot patterns when you review your history in reports.
+</Tip>
+
+## How data is stored
+
+Every transaction is written directly to a SQLite database file on your local machine. There is no cloud backup and no synchronization — your data lives on your device. See [data storage](/reference/data-storage) for details on where the database file is located and how to back it up manually.

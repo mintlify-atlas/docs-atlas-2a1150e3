@@ -1,0 +1,44 @@
+---
+title: "TransactApp version history and changelog"
+description: "Complete version history for TransactApp from v1.0.0.4 to the current v1.0.0.7 release, with automatic update policy and minimum required version details."
+---
+
+TransactApp follows a four-part version numbering scheme (`major.minor.build.revision`). This page lists every released version and explains how the automatic update policy works. The current release is **v1.0.0.7**.
+
+## Version history
+
+| Version | Status | Notes |
+|---|---|---|
+| **1.0.0.7** | Current release | Latest available version |
+| 1.0.0.6 | Superseded | Replaced by 1.0.0.7 |
+| 1.0.0.5 | Superseded | Replaced by 1.0.0.6 |
+| 1.0.0.4 | Superseded | Replaced by 1.0.0.5 |
+
+<Note>
+  If you are running **v1.0.0.3 or later**, TransactApp will automatically check for and apply updates each time the application starts. No manual download is needed — the update is installed before the app opens.
+</Note>
+
+## Automatic update policy
+
+TransactApp uses ClickOnce's built-in update mechanism. Each time you launch the app, it contacts the deployment endpoint to check whether a newer version is available:
+
+```
+https://whosmayk.github.io/TransactApp-Deploy/TransactApp.application
+```
+
+If an update is found, it is downloaded and applied before the application window opens. The **minimum required version** for automatic updates is **1.0.0.3**. Users on any version below 1.0.0.3 must reinstall the application manually to receive updates.
+
+## Release notes
+
+Detailed per-release changelogs are not yet published in this documentation. Version history reflects the releases available through the ClickOnce deployment. Check back here as future releases are documented with full change details.
+
+## Related pages
+
+<CardGroup cols={2}>
+  <Card title="Updates guide" icon="rotate" href="/guides/updates">
+    How to trigger a manual update check and troubleshoot failed updates.
+  </Card>
+  <Card title="Installation" icon="download" href="/installation">
+    Install TransactApp for the first time via ClickOnce.
+  </Card>
+</CardGroup>

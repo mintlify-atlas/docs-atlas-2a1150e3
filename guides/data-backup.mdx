@@ -1,0 +1,110 @@
+---
+title: "Back up and restore your TransactApp data"
+description: "Find your local SQLite database file, create manual backups, restore from a saved copy, and protect your financial records against data loss."
+---
+
+TransactApp stores all of your financial data — transactions, cash inventory entries, and categories — in a single SQLite database file on your Windows PC. Because the data is local and not synced to any cloud service, creating regular backups is the only way to protect against data loss from hardware failure, accidental deletion, or a corrupted database file.
+
+## Where TransactApp stores your data
+
+TransactApp is deployed via ClickOnce, which stores application data in a user-specific folder under `%LOCALAPPDATA%`. The database file is typically located at a path similar to:
+
+```text
+C:\Users\<YourUsername>\AppData\Local\Apps\2.0\<hash>\TransactApp\
+```
+
+Because ClickOnce uses hashed folder names that change between versions, the most reliable way to find your database file is to search for it by name.
+
+<Steps>
+  <Step title="Open File Explorer and enable hidden items">
+    Open **File Explorer**, click the **View** tab, and check **Hidden items**. The `AppData` folder is hidden by default.
+  </Step>
+  <Step title="Navigate to the AppData\Local folder">
+    In the File Explorer address bar, type `%LOCALAPPDATA%` and press **Enter**. This opens `C:\Users\<YourUsername>\AppData\Local` directly.
+  </Step>
+  <Step title="Search for the database file">
+    In the File Explorer search box (top right), type `TransactApp.db` (or the database file name if different). Windows will search the folder and locate the file.
+  </Step>
+  <Step title="Note the full path">
+    Right-click the file and select **Properties** to see its full path. Keep this path handy for backup and restore operations.
+  </Step>
+</Steps>
+
+<Warning>
+  Do not open, edit, or modify the database file with an external SQLite editor or any other tool while TransactApp is running. Doing so can corrupt the file and result in permanent data loss. Always close TransactApp before accessing the database file directly.
+</Warning>
+
+## How to back up your database
+
+Backing up your database is a straightforward file copy operation. No special tools are required.
+
+<Steps>
+  <Step title="Close TransactApp">
+    Exit TransactApp completely before copying the database file. This ensures all data is fully written to disk and the file is not locked by the application.
+  </Step>
+  <Step title="Locate the database file">
+    Navigate to the folder you identified in the steps above. The database file has a `.db` extension (for example, `TransactApp.db`).
+  </Step>
+  <Step title="Copy the file to a backup location">
+    Copy (do not move) the database file to your chosen backup destination. Good options include:
+
+    - A USB drive or external hard drive stored separately from your PC
+    - A folder in a cloud storage service such as OneDrive, Google Drive, or Dropbox that you manually copy to
+    - A network share or another computer on your local network
+
+    Rename the copy with a date stamp so you can identify it later — for example, `TransactApp_2026-04-25.db`.
+  </Step>
+  <Step title="Verify the backup">
+    Confirm the copied file is present in your backup location and that its file size matches the original. A backup that did not copy completely will not restore correctly.
+  </Step>
+</Steps>
+
+<Tip>
+  Set a recurring reminder — weekly or at minimum monthly — to perform a manual backup. The more frequently you back up, the less data you risk losing if something goes wrong.
+</Tip>
+
+## How to restore from a backup
+
+If your database file is lost, corrupted, or you need to roll back to an earlier state, follow these steps to restore from a backup copy.
+
+<Steps>
+  <Step title="Close TransactApp">
+    Exit TransactApp completely before making any changes to the database file location.
+  </Step>
+  <Step title="Locate the current database file">
+    Navigate to the folder where TransactApp stores its data (see the steps above). If a current database file is present and you want to preserve it, rename it (for example, `TransactApp_broken.db`) before proceeding.
+  </Step>
+  <Step title="Copy your backup file into the data folder">
+    Copy your backup `.db` file into the same folder where the original database file was located. Rename the backup file to match the original file name exactly (for example, `TransactApp.db`).
+  </Step>
+  <Step title="Launch TransactApp and verify your data">
+    Open TransactApp and confirm that your transactions, cash inventory, and other records appear correctly. If the data looks as expected, the restore was successful.
+  </Step>
+</Steps>
+
+<Warning>
+  Restoring from a backup replaces your current data with the backup's data. Any transactions or changes made after the backup was created will be lost. Make sure you are restoring the correct backup file before proceeding.
+</Warning>
+
+## What happens to your data during app updates
+
+TransactApp updates automatically using ClickOnce before each startup. ClickOnce updates replace the application files but do not touch your data files. Your SQLite database is stored in the user data folder, which is preserved across updates.
+
+You do not need to back up or restore your data before or after an automatic update. However, keeping regular backups is still recommended as a general precaution.
+
+## Related pages
+
+<CardGroup cols={2}>
+  <Card title="Data storage reference" icon="database" href="/reference/data-storage">
+    Technical details about where TransactApp stores its SQLite database and application files.
+  </Card>
+  <Card title="Keeping TransactApp up to date" icon="rotate" href="/guides/updates">
+    Understand how automatic updates work and what to do if an update fails.
+  </Card>
+  <Card title="System requirements" icon="desktop" href="/reference/system-requirements">
+    Hardware and software requirements for running TransactApp on Windows.
+  </Card>
+  <Card title="Managing your finances" icon="chart-line" href="/guides/managing-finances">
+    Best practices for categorizing transactions and building a consistent review routine.
+  </Card>
+</CardGroup>
